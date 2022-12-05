@@ -5,6 +5,7 @@ import 'dart:io';
 import 'dart:ui';
 import 'detail_games.dart';
 import 'base_network.dart';
+// import 'model_shooter.dart';
 import 'model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,13 +13,13 @@ import 'package:flutter/widgets.dart';
 // import 'package:module_ifsi_flutter/model.dart';
 // import 'package:module_ifsi_flutter/covid_data_source.dart';
 
-class PageMakeup extends StatefulWidget {
-  const PageMakeup({Key? key}) : super(key: key);
+class PageShooter extends StatefulWidget {
+  const PageShooter({Key? key}) : super(key: key);
   @override
-  _PageMakeupState createState() => _PageMakeupState();
+  _PageShooterState createState() => _PageShooterState();
 }
 
-class _PageMakeupState extends State<PageMakeup> {
+class _PageShooterState extends State<PageShooter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +37,7 @@ class _PageMakeupState extends State<PageMakeup> {
   Widget _buildDetailCountriesBody() {
     return Container(
       child: FutureBuilder(
-        future: GamesSource.instance.loadGames(),
+        future: ShooterSource.instance.loadShooter(),
         builder: (
             BuildContext context,
             AsyncSnapshot<dynamic> snapshot,
@@ -83,10 +84,10 @@ class _PageMakeupState extends State<PageMakeup> {
           ),
           itemCount: data.product?.length,
           itemBuilder: (BuildContext context, int index) {//2 parameter
-            final ProductData? games = data.product?[index];
+            // final ShooterModel? games = data.product?[index];
             return InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailGames(name: games,)));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => DetailGames(name: games,)));
               },
               child: Container(
                   // shape: RoundedRectangleBorder(

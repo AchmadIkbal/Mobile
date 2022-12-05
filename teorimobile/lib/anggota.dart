@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'logout.dart';
+import 'shooter.dart';
 class Anggota extends StatefulWidget {
   const Anggota({Key? key}) : super(key: key);
 
@@ -74,7 +75,7 @@ class _AnggotaState extends State<Anggota> {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(builder: (context){
-                            return Logout();
+                            return PageShooter();
                           }),);
                       },
                       style: ButtonStyle(
@@ -89,6 +90,36 @@ class _AnggotaState extends State<Anggota> {
                       ),
                       child: const Text(
                         'Logout',
+                        style: TextStyle(
+                          // fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Container(
+                    width: 300,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context){
+                            // ignore: prefer_const_constructors
+                            return PageShooter();
+                          }),);
+                      },
+                      style: ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.black)
+                              )
+                          )
+                      ),
+                      child: const Text(
+                        'Shooter',
                         style: TextStyle(
                           // fontWeight: FontWeight.bold,
                         ),

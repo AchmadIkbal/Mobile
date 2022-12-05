@@ -46,6 +46,7 @@ class _LoginPageFulState extends State<LoginPageFul> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
+                        color: Colors.white
                       ),
                     ),
                     const SizedBox(
@@ -147,7 +148,7 @@ class _LoginPageFulState extends State<LoginPageFul> {
                           style: ElevatedButton.styleFrom(
                               primary: (isLoginSuccess) ? Colors.deepPurple[400] : Colors.deepPurple[400] //ternary operation
                           ),
-                          child: Text("Login"),
+                          child: Text("Login", style: TextStyle(color: Colors.white),),
                           onPressed: (){
                             String text = "";
                             if(username == "" && password == ""){
